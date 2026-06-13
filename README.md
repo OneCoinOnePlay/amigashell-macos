@@ -145,3 +145,18 @@ Open a new Terminal window. You should see:
 - `~/.zprofile`
 - `~/.zshrc`
 - `~/Library/Preferences/com.apple.Terminal.plist`
+ 
+## Revert Prompt to Default
+
+  To remove the AmigaShell prompt and restore zsh's default, open `~/.zshrc`:
+
+  ```sh
+  open -e ~/.zshrc
+  ```
+  Remove these two lines:
+  ```sh
+  setopt PROMPT_SUBST
+  PROMPT='1.SYS:${${PWD/#"$HOME"}##/}> '
+  ```
+  Save the file, then open a new Terminal window for the change to take effect.
+
